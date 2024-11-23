@@ -7,7 +7,8 @@
 		"dev": "vite --host",
 		"build": "tsc -b && vite build",
 		"lint": "biome lint .",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@timetree/biome-config": "npm:@jsr/timetree__biome-config@^0.1.13",
@@ -23,10 +24,23 @@
 		"@vitejs/plugin-react": "^4.3.3",
 		"autoprefixer": "^10.4.20",
 		"globals": "^15.11.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.2.10",
 		"postcss": "^8.4.49",
 		"tailwindcss": "^3.4.15",
 		"typescript": "~5.6.2",
 		"typescript-eslint": "^8.11.0",
 		"vite": "^5.4.10"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --files-ignore-unknown=true",
+			"biome check --write --no-errors-on-unmatched",
+			"biome check --write --organize-imports-enabled=false --no-errors-on-unmatched",
+			"biome check --write --unsafe --no-errors-on-unmatched",
+			"biome format --write --no-errors-on-unmatched",
+			"biome lint --write --no-errors-on-unmatched"
+		],
+		"*": ["biome check --no-errors-on-unmatched --files-ignore-unknown=true"]
 	}
 }
