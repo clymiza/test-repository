@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	html {
+		/* biome-ignore lint: theme */
+		background-color: theme("colors.brand");
+	}
+}

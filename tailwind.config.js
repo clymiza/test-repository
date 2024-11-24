@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				base: "#3b4044",
+				black: "#3b4044",
 				white: "#ffffff",
 				placeholder: "#c1c1c1",
 				border: "#adbbc4",
@@ -14,6 +14,7 @@ export default {
 				error: "#ff3d72",
 				readonly: "#fbfbfb",
 				"brand-disabled": "#baead5",
+				gray: "#f0f5f6",
 			},
 			fontSize: {
 				base: "0.875rem" /* 14px */,
