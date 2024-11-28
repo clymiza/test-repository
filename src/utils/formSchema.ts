@@ -21,7 +21,8 @@ export const formSchema = z
 			.string()
 			.url({ message: "URLを入力してください" })
 			.max(2048, { message: "2048文字以内で入力してください" })
-			.optional(),
+			.optional()
+			.or(z.literal("")),
 	})
 	.superRefine((arg, ctx) => {
 		if (arg) {
