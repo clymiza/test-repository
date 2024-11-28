@@ -7,5 +7,5 @@ export default defineConfig({
 	resolve: {
 		alias: [{ find: "@/", replacement: `${__dirname}/src/` }],
 	},
-	base: "/",
+	base: "/test-repository/",
 });
