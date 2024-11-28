@@ -10,6 +10,11 @@
 		"preview": "vite preview",
 		"prepare": "husky"
 	},
+	"overrides": {
+		"vite": {
+			"rollup": "npm:@rollup/wasm-node"
+		}
+	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.9.1",
 		"@timetree/biome-config": "npm:@jsr/timetree__biome-config@^0.1.13",
