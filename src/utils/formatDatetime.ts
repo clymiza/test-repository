@@ -1,3 +1,11 @@
+export type DateTimeRange = {
+	startDate: string;
+	startTime: string;
+	endDate: string;
+	endTime: string;
+	allDay?: boolean;
+};
+
 /**
  * 時刻をフォーマットする
  * @param startDate 開始日
@@ -14,13 +22,7 @@ export function formatDatetime({
 	endDate,
 	endTime,
 	allDay,
-}: {
-	startDate: string;
-	startTime: string;
-	endDate: string;
-	endTime: string;
-	allDay?: boolean;
-}): { startDatetime: Date; endDatetime: Date } {
+}: DateTimeRange): { startDatetime: Date; endDatetime: Date } {
 	const startDatetime = new Date(startDate);
 	const endDatetime = new Date(endDate);
 	// 終日の時は、時刻を00:00にする
